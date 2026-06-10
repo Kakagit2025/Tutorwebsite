@@ -1,10 +1,24 @@
+import { notFound } from 'next/navigation';
 import tutors from '../../../data/tutors.json';
 
-export default function TutorProfile({ params }: { params: { id: string } }) {
-  const tutor = tutors.find((t) => t.id === Number(params.id));
+type TutorProfileProps = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+
+export function generateStaticParams() {
+  return tutors.map((tutor) => ({
+    id: tutor.id.toString(),
+  }));
+}
+
+export default async function TutorProfile({ params }: TutorProfileProps) {
+  const { id } = await params;
+  const tutor = tutors.find((t) => t.id === Number(id));
 
   if (!tutor) {
-    return <div>Tutor not found.</div>;
+    notFound();
   }
 
   return (
