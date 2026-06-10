@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Amit Sharma",
+    "subject": "Mathematics",
+    "area": "Rajpur Road",
+    "experience": 5,
+    "featured": true,
+    "approved": true
+  },
+  {
+    "id": 2,
+    "name": "Neha Verma",
+    "subject": "Physics",
+    "area": "Ballupur",
+    "experience": 4,
+    "featured": false,
+    "approved": true
+  }
+]
