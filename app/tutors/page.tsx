@@ -11,6 +11,7 @@ export default function TutorsPage() {
         {approvedTutors.map((tutor) => (
           <TutorCard
             key={tutor.id}
+            id={tutor.id}
             name={tutor.name}
             subject={tutor.subject}
             area={tutor.area}
